@@ -16,27 +16,14 @@
     display: flex;
     flex-direction: row;
   }
+
+  .product-list {
+    display: flex;
+    flex-direction: column;
+  }
   
   router-outlet + *  {
     padding: 0 16px;
-  }
-  
-  /* Text */
-  
-  h1 {
-    font-size: 32px;
-  }
-  
-  h2 {
-    font-size: 20px;
-  }
-  
-  h1, h2 {
-    font-weight: lighter;
-  }
-  
-  p {
-    font-size: 14px;
   }
   
   /* Hyperlink */
@@ -136,12 +123,3 @@
     border-radius: 2px;
     background-color: #EEEEEE;
   }
-  
-  
-  /*
-  Copyright Google LLC. All Rights Reserved.
-  Use of this source code is governed by an MIT-style license that
-  can be found in the LICENSE file at https://angular.io/license
-  */
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

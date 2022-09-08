@@ -24,4 +24,16 @@ export const products = [
     price: 299,
     description: '',
   },
+  {
+    id: 4,
+    name: 'Phone Max',
+    price: 980,
+    description: 'A great phone with one of the best batteries',
+  },
+  {
+    id: 5,
+    name: 'Phone Economy',
+    price: 199,
+    description: '',
+  },
 ];
