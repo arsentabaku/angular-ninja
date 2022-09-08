@@ -1,0 +1,57 @@
+<mat-sidenav-container autosize>
+        <mat-sidenav #sidenav mode="side" opened="isExpanded">
+                <mat-nav-list>
+                        <mat-list-item (click)="isExpanded = !isExpanded">
+                                <mat-icon mat-list-icon class="chevron-button" [ngClass]="{ rotated: isExpanded }">
+                                        chevron_right
+                                </mat-icon>
+                        </mat-list-item>
+
+                        <mat-list-item [routerLink]="'/accounts/summary'">
+                                <mat-icon mat-list-icon>home</mat-icon>
+                                <span *ngIf="isExpanded" class="menu-item">Accounts summary</span>
+                        </mat-list-item>
+                        <mat-list-item [routerLink]="'/accounts/create'">
+                                <mat-icon mat-list-icon>home</mat-icon>
+                                <span *ngIf="isExpanded" class="menu-item">Account > Creation</span>
+                        </mat-list-item>
+                        <mat-list-item [routerLink]="'/legal-doc'">
+                                <mat-icon mat-list-icon>home</mat-icon>
+                                <span *ngIf="isExpanded" class="menu-item">Legal document</span>
+                        </mat-list-item>
+                        <mat-list-item [routerLink]="'/legal-doc/overview'">
+                                <mat-icon mat-list-icon>home</mat-icon>
+                                <span *ngIf="isExpanded" class="menu-item">Legal document > Overview</span>
+                        </mat-list-item>
+
+                        <mat-list-item (click)="showSubmenu = !showSubmenu" class="parent">
+                                <span class="full-width" *ngIf="isExpanded || isShowing">Analytics</span>
+                                <mat-icon mat-list-icon>home</mat-icon>
+                                <mat-icon class="menu-button" [ngClass]="{'rotated' : showSubmenu}"
+                                        *ngIf="isExpanded || isShowing">expand_more</mat-icon>
+                        </mat-list-item>
+                        <div class="submenu" [ngClass]="{'expanded' : showSubmenu}" *ngIf="isShowing || isExpanded">
+                                <mat-list-item routerLink="/analytics">
+                                        <mat-icon mat-list-icon>important_devices</mat-icon>
+                                        <span *ngIf="isExpanded" class="menu-item">Dashboard</span>
+                                </mat-list-item>
+                                <mat-list-item routerLink="/analytics/project-processing">
+                                        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+                                        <span *ngIf="isExpanded" class="menu-item">Project processing</span>
+                                </mat-list-item>
+                                <mat-list-item routerLink="/analytics/kibana">
+                                        <mat-icon mat-list-icon>important_devices</mat-icon>
+                                        <span *ngIf="isExpanded" class="menu-item">Kibana</span>
+                                </mat-list-item>
+                        </div>
+                </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+                <mat-toolbar>
+                        <h4>Hello everyone</h4>
+                </mat-toolbar>
+                <router-outlet></router-outlet>
+        </mat-sidenav-content>
+
+</mat-sidenav-container>
