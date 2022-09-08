@@ -1,6 +1,6 @@
 {
     "/test/*": {
-        "target": "http://a.b.x.y/test",
+        "target": "http://poseidon.internal.vrdirect.io/test",
         "secure": false,
         "logLevel": "debug",
         "pathRewrite": {
