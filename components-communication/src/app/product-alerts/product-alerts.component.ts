@@ -8,7 +8,7 @@ import { Product } from '../products';
 })
 export class ProductAlertsComponent implements OnInit {
   @Input() public product!: Product;
-  @Output() public priceNotification = new EventEmitter();
+  @Output() public priceNotification = new EventEmitter<string>();
 
   constructor() {}
 

@@ -1,8 +1,8 @@
-<div *ngFor="let product of products">
+<div *ngFor="let product of products" class="product-list">
     <mat-card class="example-card">
         <mat-card-title-group>
             <mat-card-title>
-                <a [title]="product.name + ' details'"> {{ product.name }} </a>
+                <a [title]="product.name + ' details'" [routerLink]="['/products', product.id]"> {{ product.name }} </a>
             </mat-card-title>
             <mat-card-subtitle>
                 <p>{{product.price}}$</p>
@@ -12,9 +12,10 @@
             <p *ngIf="product.description; else noProductDesc"> Description: {{ product.description }} </p>
             <ng-template #noProductDesc><i>No description...</i></ng-template>
         </mat-card-content>
+        <mat-card-actions>
+            <button (click)="share()">Share</button>
+            <app-product-alerts (priceNotification)="onPriceNotification($event)" [product]="product">
+            </app-product-alerts>
+        </mat-card-actions>
     </mat-card>
-    <mat-card-actions>
-        <button (click)="share()">Share</button>
-        <app-product-alerts (priceNotification)="onPriceNotification()" [product]="product"></app-product-alerts>
-    </mat-card-actions>
 </div>

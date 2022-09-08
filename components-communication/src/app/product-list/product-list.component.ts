@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter } from '@angular/core';
 
 import { products } from '../products';
 
@@ -14,7 +14,7 @@ export class ProductListComponent {
     window.alert('The product has been shared!');
   }
 
-  onPriceNotification() {
-    window.alert('You will be notified when price goes lower than 500$!');
+  onPriceNotification(data: string) {
+    window.alert(`${data} - You will be notified when price goes lower than 500$`);
   }
 }
