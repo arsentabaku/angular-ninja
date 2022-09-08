@@ -1,0 +1,11 @@
+{
+    "/test/*": {
+        "target": "http://a.b.x.y/test",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/test": ""
+        },
+        "changeOrigin": true
+    }
+}

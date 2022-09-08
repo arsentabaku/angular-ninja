@@ -9,6 +9,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatInputModule } from '@angular/material/input';
+import { MatSortModule } from '@angular/material/sort';
 
 export const UI_MODULES = [
   MatSliderModule,
@@ -22,4 +24,6 @@ export const UI_MODULES = [
   MatIconModule,
   MatMenuModule,
   MatPaginatorModule,
+  MatInputModule,
+  MatSortModule,
 ];
