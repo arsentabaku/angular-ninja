@@ -1,13 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
+import { MembersSummaryComponent } from './accounts/components/members/members-summary/members-summary.component';
+import { AccountOverviewComponent } from './accounts/components/accounts/account-overview/account-overview.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'analytics', pathMatch: 'full' },
+  { path: 'members', component: MembersSummaryComponent },
   {
     path: 'accounts',
     loadChildren: () =>
       import('./accounts/accounts.module').then((m) => m.AccountsModule),
+  },
+  {
+    path: 'accounts/:accountId',
+    component: AccountOverviewComponent,
   },
   {
     path: 'legal-doc',

@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 import { MatSortModule } from '@angular/material/sort';
+import { MatButtonModule } from '@angular/material/button';
 
 export const UI_MODULES = [
   MatSliderModule,
@@ -26,4 +27,5 @@ export const UI_MODULES = [
   MatPaginatorModule,
   MatInputModule,
   MatSortModule,
+  MatButtonModule,
 ];

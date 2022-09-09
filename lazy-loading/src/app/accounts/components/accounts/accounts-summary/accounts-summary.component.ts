@@ -2,7 +2,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
-import { Account } from 'src/app/accounts/models/account.model';
+import { Router } from '@angular/router';
+import { Account, AccountSummary } from 'src/app/accounts/models/account.model';
 import { AccountsService } from 'src/app/accounts/services/accounts.service';
 
 @Component({
@@ -13,7 +14,7 @@ import { AccountsService } from 'src/app/accounts/services/accounts.service';
 export class AccountsSummaryComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  accountsList = new MatTableDataSource<Account>();
+  accountsList = new MatTableDataSource<AccountSummary>();
   public displayedColumns: string[] = [
     'companyName',
     'createdOn',
@@ -21,9 +22,13 @@ export class AccountsSummaryComponent implements OnInit {
     'licenseId',
     'sourceIntegrationSource',
     'tags',
+    'actions',
   ];
 
-  constructor(private accountsService: AccountsService) {}
+  constructor(
+    private accountsService: AccountsService,
+    private router: Router
+  ) {}
 
   async ngOnInit(): Promise<void> {
     this.accountsList.data = await this.accountsService.getAccounts();
@@ -38,5 +43,9 @@ export class AccountsSummaryComponent implements OnInit {
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.accountsList.filter = filterValue.trim().toLowerCase();
+  }
+
+  navigateToAccountDetails(account: AccountSummary) {
+    this.router.navigate(['accounts/' + account.accountId]);
   }
 }
