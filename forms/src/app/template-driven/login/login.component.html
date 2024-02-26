@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form (ngSubmit)="submit(loginForm)" #loginForm="ngForm">
+                <div class="form-group" ngModelGroup="credentials">
+                    <label for="email">EMAIL: </label><br>
+                    <input type="email" name="email" required #email="ngModel" email ngModel><br>
+                    <span class="validity-warning" *ngIf="email.invalid && email.touched">Email is invalid!</span><br><br>
+                    <label for="email">PASSWORD: </label><br>
+                    <input type="password" name="password" #password="ngModel" required ngModel><br>
+                    <span class="validity-warning" *ngIf="password.invalid && password.touched">Password is invalid!</span><br><br>
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="loginForm.invalid">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
