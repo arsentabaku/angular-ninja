@@ -1,0 +1,10 @@
+<h3>Yay, I'm home!</h3>
+<button (click)="observeRounds()">Start observing</button> | 
+<button (click)="printOnConsole()">Print</button><br><br>
+<div>
+    <ul *ngFor="let round of rounds">
+        <li>
+            <span>{{round}}</span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <a routerLink="/">Home</a> |
+      <a [routerLink]="['user', 1]"> User 1 </a> |
+      <a [routerLink]="['user', 2]"> User 2 </a> |
+      <a [routerLink]="'promise-vs-observable'"> Promise-vs-observable </a> |
+      <a [routerLink]="'account-summary'"> Account Summary </a> |
+      <a [routerLink]="'form-events'"> Form Events </a><br><br>
+
+      <a [routerLink]="'rxjs/observables'"> Observables </a> |
+      <a [routerLink]="'rxjs/event-emitter'"> Event Emmiter </a> |
+      <a [routerLink]="'rxjs/subjects'"> Subjects </a> |
+      <a [routerLink]="'rxjs/behavior-subject'"> Behavior Subject </a> |
+      <a [routerLink]="'rxjs/replay-subject'"> Replay Subject </a> |
+    </div>
+  </div>
+  <hr />
+  <router-outlet></router-outlet>
+</div>

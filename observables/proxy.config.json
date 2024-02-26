@@ -1,0 +1,11 @@
+{
+    "/test/*": {
+        "target": "http://poseidon.internal.vrdirect.io/test",
+        "secure": false,
+        "logLevel": "debug",
+        "pathRewrite": {
+            "^/test": ""
+        },
+        "changeOrigin": true
+    }
+}
