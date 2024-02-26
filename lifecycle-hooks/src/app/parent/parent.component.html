@@ -1,0 +1,18 @@
+<p #list>parent works!</p>
+
+<button (click)="toggleChild()">Toggle child</button>
+<input type="text" [(ngModel)]="inputValue">
+
+<app-child *ngIf="isChildToggled" [inputValue]="inputValue">
+    <div class="project-title">
+        <h2 #projectContent>Content projection from parent to child</h2>
+    </div>
+    <div class="project-list">
+        <ul>
+            <li>One</li>
+            <li>Two</li>
+            <li>Three</li>
+        </ul>
+    </div>
+    <p></p>
+</app-child>
