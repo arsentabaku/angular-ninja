@@ -1,0 +1,28 @@
+<div class="container">
+  <div>
+    <div>
+      <h1> Sample text piped with multiple built-in pipes </h1>
+      <input type="text" [(ngModel)]="filteredStatus">
+      <ul>
+        <li 
+          *ngFor="let server of servers | filter:filteredStatus:'status' | sort:'name'"
+          [ngClass]="getStatusClasses(server)">
+          <span class="badge">
+            {{ server.status | reverse}}
+          </span>
+          <strong>{{ server.name | shorten:10 }}</strong> |
+          {{ server.instanceType | titlecase }} |
+          {{ server.started | date:'fullDate'}}
+        </li>
+      </ul>
+    </div><br><br>
+    <h1> Sample object piped with json </h1>
+    <pre> {{sampleObject | json}} </pre><br><br>
+    <h1> Sample number piped with percentage </h1>
+    <p> {{ sampleNumber | percent}} </p><br><br>
+    <h1> Sample number piped with currency </h1>
+    <p> {{ sampleNumber | currency}} </p><br><br>
+    <h1> Async pipes </h1>
+    <p> App status is: {{ appStatus | async}} </p><br><br>
+  </div>
+</div>
